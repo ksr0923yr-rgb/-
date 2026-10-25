@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#172344">
+<title>単語クエスト｜大学入試英単語</title>
+<style>
+:root{--ink:#172344;--muted:#66718b;--paper:#f3f5fb;--card:#fff;--line:#e0e5f0;--blue:#425de0;--bluep:#edf0ff;--green:#16754f;--red:#a73140;--gold:#e5a52a;--shadow:0 10px 27px #17234410}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a5b5ff;outline-offset:2px}.app{max-width:880px;margin:auto;padding:0 15px 30px}.hero{background:linear-gradient(135deg,#172344,#384fc4 82%);color:#fff;margin:0 -15px 17px;padding:24px 20px 20px;border-radius:0 0 25px 25px}.eyebrow{font-size:11px;letter-spacing:.14em;font-weight:800;opacity:.8}.hero h1{font-size:30px;letter-spacing:-.04em;line-height:1.14;margin:12px 0 8px}.hero p{margin:0;color:#e1e7ff;font-size:13px;line-height:1.75}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}.stat{border:1px solid #ffffff24;background:#ffffff13;border-radius:13px;padding:10px 12px;min-width:0}.stat small{display:block;color:#e2e8ff;font-size:11px}.stat strong{display:block;font-size:21px;margin-top:3px;overflow-wrap:anywhere}.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#e5e9f4;padding:5px;border-radius:14px;margin-bottom:14px}.nav button{border:0;background:transparent;color:#5e6984;padding:10px 5px;font-weight:800;font-size:13px;border-radius:10px}.nav button.active{background:#fff;color:var(--ink);box-shadow:0 2px 7px #17234410}.panel{display:none}.panel.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:13px;box-shadow:var(--shadow)}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.label{font-size:11px;font-weight:850;letter-spacing:.09em;color:var(--muted)}.muted{font-size:12px;color:var(--muted);line-height:1.7}.filters{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.chip{border:0;background:#edf0f7;color:#52607e;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:800}.chip.active{background:var(--bluep);color:var(--blue)}.section-title{font-size:18px;margin:0 0 5px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.btn{border:0;border-radius:13px;padding:12px 14px;font-weight:850;font-size:13px}.btn.primary{background:var(--blue);color:#fff;flex:1}.btn.secondary{background:#edf0f7;color:#34415f}.btn.secondary.active{background:#fff3d8;color:#875b00;border:1px solid #f0d28b}.btn:disabled{opacity:.42;cursor:not-allowed}.track{height:7px;background:#edf0f7;border-radius:50px;overflow:hidden;margin:10px 0 5px}.fill{height:100%;width:0;background:linear-gradient(90deg,#6177f4,#63c69b);transition:width .2s}.prompt{min-height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:13px 0 18px}.word-main{font-size:36px;line-height:1.25;font-weight:900;letter-spacing:-.04em;overflow-wrap:anywhere}.word-pos{font-size:12px;color:var(--muted);margin-top:8px}.word-meaning{font-size:24px;font-weight:850;line-height:1.5}.choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choice{border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px 14px;text-align:left;color:var(--ink);font-size:14px;line-height:1.5;overflow-wrap:anywhere;min-height:57px}.choice.correct{border-color:#73c5a0;background:#eaf8f1;color:#126843}.choice.wrong{border-color:#e4a2aa;background:#fff0f1;color:#9a2e3d}.choice:disabled{cursor:default}.feedback{display:none;margin-top:12px;padding:13px 14px;border-radius:13px;line-height:1.7;font-size:13px}.feedback.show{display:block}.feedback.good{background:#eaf8f1;color:#126843}.feedback.bad{background:#fff0f1;color:#9a2e3d}.feedback strong{display:block;margin-bottom:5px}.example{margin-top:9px;padding-top:9px;border-top:1px solid #ffffff80}.status-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.status-btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:8px 10px;font-size:12px;font-weight:800}.status-btn.active{border-color:#9daaf8;background:var(--bluep);color:var(--blue)}.big{font-size:42px;color:var(--blue);font-weight:900;text-align:center;letter-spacing:-.05em;margin:12px 0}.note{background:#f7f8fc;border:1px solid var(--line);border-radius:13px;padding:13px 14px;margin:10px 0}.note h3{font-size:14px;margin:0 0 6px}.note p,.note li{font-size:13px;line-height:1.75;margin:4px 0}.level-grid{display:grid;grid-template-columns:1fr;gap:9px;margin-top:12px}.level-card{border:1px solid var(--line);border-radius:14px;padding:13px}.level-card strong{display:block;font-size:14px}.level-card .muted{margin-top:4px}.level-track{height:6px;background:#eef0f6;border-radius:50px;overflow:hidden;margin-top:8px}.level-fill{height:100%;background:#6177f4}.search{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 13px;font-size:14px}.word-list{display:grid;gap:8px;margin-top:12px}.word-item{border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px}.word-item summary{list-style:none;cursor:pointer}.word-item summary::-webkit-details-marker{display:none}.word-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.word-head strong{font-size:17px}.word-head .meaning{font-size:13px;line-height:1.6;margin-top:4px}.tag{display:inline-block;background:var(--bluep);color:var(--blue);border-radius:7px;padding:4px 7px;font-size:10px;font-weight:850;margin-right:5px}.pill{display:inline-block;padding:4px 7px;border-radius:7px;background:#f0f2f7;color:#5f6980;font-size:10px;font-weight:800;white-space:nowrap}.word-detail{font-size:13px;line-height:1.7;margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}.status-known{background:#eaf8f1;color:#126843}.status-uncertain{background:#fff3d8;color:#875b00}.status-learning{background:#fff0f1;color:#9a2e3d}.empty{border:1px dashed #cdd4e3;border-radius:13px;padding:20px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}.footer{text-align:center;color:#8992a6;font-size:11px;padding:12px}.toast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,16px);padding:11px 15px;background:#172344;color:#fff;border-radius:12px;opacity:0;pointer-events:none;transition:.2s;z-index:9;font-size:13px;max-width:90vw}.toast.show{opacity:1;transform:translate(-50%,0)}[hidden]{display:none!important}@media(min-width:620px){.app{padding-left:22px;padding-right:22px}.hero{margin-left:-22px;margin-right:-22px;padding:30px 28px 22px}.hero h1{font-size:35px}.card{padding:23px}.level-grid{grid-template-columns:repeat(3,1fr)}.prompt{min-height:160px}.choices{gap:11px}}@media(max-width:440px){.choices{grid-template-columns:1fr}.word-main{font-size:32px}.word-meaning{font-size:21px}.stat strong{font-size:18px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="hero">
+  <div class="eyebrow">ENGLISH VOCABULARY • PERSONAL QUEST</div>
+  <h1>単語クエスト</h1>
+  <p>共通テストから最難関国公立まで。単語を「見たことがある」から「瞬時に使える」へ。<br>レベル別演習・曖昧復習・ミス復習をまとめた大学入試英単語トレーナー。</p>
+  <div class="stats">
+    <div class="stat"><small>獲得 XP</small><strong id="xp">0</strong></div>
+    <div class="stat"><small>覚えた単語</small><strong id="knownCount">0</strong></div>
+    <div class="stat"><small>収録データ</small><strong id="loadedCount">0 / 3,500</strong></div>
+  </div>
+</header>
+<nav class="nav" aria-label="メインメニュー">
+  <button class="active" type="button" data-tab="play">🎮 クエスト</button>
+  <button type="button" data-tab="vocab">📚 単語帳</button>
+  <button type="button" data-tab="progress">📈 学習記録</button>
+</nav>
+
+<section id="play" class="panel active">
+  <div class="card" id="resumeCard" hidden>
+    <div class="label">⏸ 中断中のクエスト</div><p class="muted" id="resumeText"></p>
+    <div class="actions"><button class="btn primary" data-action="resume">続きから再開</button><button class="btn secondary" data-action="discard">破棄</button></div>
+  </div>
+  <div class="card">
+    <div class="row"><div class="label">QUEST SETTINGS</div><div class="label" id="roundLabel">新しいクエスト</div></div>
+    <h2 class="section-title" style="margin-top:8px">攻略するレベル</h2>
+    <div id="levels" class="filters">
+      <button type="button" class="chip active" data-level="0">全レベル</button>
+      <button type="button" class="chip" data-level="1">Lv.1 共通テスト〜MARCH</button>
+      <button type="button" class="chip" data-level="2">Lv.2 MARCH〜早慶</button>
+      <button type="button" class="chip" data-level="3">Lv.3 早慶〜最難関国公立</button>
+    </div>
+    <div class="label">出題方向</div>
+    <div id="directions" class="filters">
+      <button type="button" class="chip active" data-direction="en-ja">英語 → 日本語</button>
+      <button type="button" class="chip" data-direction="ja-en">日本語 → 英語</button>
+    </div>
+    <div class="label">出題範囲</div>
+    <div id="reviewModes" class="filters">
+      <button type="button" class="chip active" data-review="all">全単語</button>
+      <button type="button" class="chip" data-review="missed">ミス復習</button>
+      <button type="button" class="chip" data-review="uncertain">曖昧復習</button>
+      <button type="button" class="chip" data-review="learning">未習得</button>
+    </div>
+    <div class="row"><span class="muted" id="poolCount">出題候補 0語</span><span class="muted" id="accuracy">正答率 —</span></div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div id="quiz">
+      <div class="prompt"><div class="muted">レベルと出題方向を選び、クエストを開始</div></div>
+      <div id="choices" class="choices"></div>
+      <div id="feedback" class="feedback"></div>
+      <div class="actions">
+        <button class="btn secondary" id="speak" data-action="speak" hidden>🔊 発音</button>
+        <button class="btn secondary" id="skip" data-action="skip" disabled>パス</button>
+        <button class="btn secondary" id="pause" data-action="pause" disabled>⏸ 中断</button>
+        <button class="btn primary" id="next" data-action="next" disabled>次へ →</button>
+      </div>
+      <div id="statusPanel" hidden>
+        <div class="label" style="margin-top:14px">この単語の習得状態</div>
+        <div class="status-actions">
+          <button class="status-btn" data-status="known">✓ 覚えた</button>
+          <button class="status-btn" data-status="uncertain">△ 曖昧</button>
+          <button class="status-btn" data-status="learning">↻ まだ</button>
+        </div>
+      </div>
+    </div>
+    <div id="result" hidden>
+      <div class="label" style="text-align:center">QUEST COMPLETE</div><div class="big" id="score">0%</div>
+      <p class="muted" id="resultText" style="text-align:center"></p>
+      <button class="btn primary" style="width:100%" data-action="retry">同じ条件でもう一度</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2 class="section-title">クエストを開始</h2>
+    <p class="muted">まずは5〜20語で短く反復。慣れてきたら選択範囲を一周しよう。</p>
+    <div class="actions"><button class="btn primary" data-action="start5">5語</button><button class="btn secondary" data-action="start10">10語</button><button class="btn secondary" data-action="start20">20語</button></div>
+    <div class="actions"><button class="btn secondary" data-action="startall">この範囲を一周</button></div>
+  </div>
+</section>
+
+<section id="vocab" class="panel">
+  <div class="card">
+    <h2 class="section-title">単語帳</h2><p class="muted">英単語・意味・例文を検索できます。単語ごとに「覚えた／曖昧／まだ」を記録できます。</p>
+    <input id="wordSearch" class="search" type="search" placeholder="単語・意味・品詞で検索…" autocomplete="off">
+    <div class="filters" id="vocabLevels">
+      <button class="chip active" type="button" data-vlevel="0">全レベル</button><button class="chip" type="button" data-vlevel="1">Lv.1</button><button class="chip" type="button" data-vlevel="2">Lv.2</button><button class="chip" type="button" data-vlevel="3">Lv.3</button>
+    </div>
+    <div class="filters" id="vocabStatuses">
+      <button class="chip active" type="button" data-vstatus="all">すべて</button><button class="chip" type="button" data-vstatus="learning">まだ</button><button class="chip" type="button" data-vstatus="uncertain">曖昧</button><button class="chip" type="button" data-vstatus="known">覚えた</button>
+    </div>
+    <div class="row"><span id="wordListCount" class="muted">0語</span><span class="muted">単語をタップして詳細</span></div>
+    <div id="wordList" class="word-list"></div>
+  </div>
+  <div class="card">
+    <h2 class="section-title">単語データの追加</h2>
+    <p class="muted">あとから3,500語まで増やせるよう、単語データをJSONで読み込む構造にしています。既存IDと重複する単語は追加しません。読み込んだデータはこのブラウザに保存されます。</p>
+    <div class="actions"><button type="button" class="btn secondary" data-action="importBank">単語データを読み込む</button><button type="button" class="btn secondary" data-action="exportBank">単語データを書き出す</button><button type="button" class="btn secondary" data-action="downloadTemplate">追加用テンプレート</button></div>
+    <input id="bankFile" type="file" accept="application/json,.json" hidden>
+    <p class="muted">必要な項目：<code>id</code>（例 v0037）、<code>word</code>、<code>meaning</code>、<code>level</code>（1〜3）。<code>pos</code>、<code>example</code>、<code>exampleJa</code>、<code>tags</code> は任意です。</p>
+  </div>
+</section>
+
+<section id="progress" class="panel">
+  <div class="card">
+    <h2 class="section-title">学習記録</h2>
+    <div class="stats" style="margin-top:12px">
+      <div class="stat" style="background:#f4f6fb;border-color:var(--line);color:var(--ink)"><small style="color:var(--muted)">解答数</small><strong id="answeredTotal">0</strong></div>
+      <div class="stat" style="background:#f4f6fb;border-color:var(--line);color:var(--ink)"><small style="color:var(--muted)">正解数</small><strong id="correctTotal">0</strong></div>
+      <div class="stat" style="background:#f4f6fb;border-color:var(--line);color:var(--ink)"><small style="color:var(--muted)">曖昧単語</small><strong id="uncertainCount">0</strong></div>
+    </div>
+    <h3 style="font-size:14px;margin:20px 0 8px">レベル別の収録・習得状況</h3><div id="levelProgress" class="level-grid"></div>
+    <h3 style="font-size:14px;margin:20px 0 8px">復習リスト</h3><div class="note"><p id="reviewSummary">ミス・曖昧単語はまだありません。</p><div class="actions"><button class="btn secondary" data-action="reviewMissed">ミス復習を開始</button><button class="btn secondary" data-action="reviewUncertain">曖昧復習を開始</button></div></div>
+  </div>
+  <div class="card">
+    <h2 class="section-title">バックアップ</h2><p class="muted">ブラウザのデータが消える場合に備えて、学習記録をJSONで保存できます。別のブラウザに移す場合は、保存したファイルを読み込んでください。</p>
+    <div class="actions"><button class="btn secondary" data-action="exportProgress">学習記録を書き出す</button><button class="btn secondary" data-action="importProgress">学習記録を復元</button><button class="btn secondary" data-action="reset">記録リセット</button></div><input id="progressFile" type="file" accept="application/json,.json" hidden>
+  </div>
+</section>
+<div class="footer">単語クエスト｜学習記録はこのブラウザに保存されます。<br>初期版は構造確認用のサンプル単語を収録。3,500語の完成版ではありません。</div>
+</main><div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+// ===== データ設計 =====
+// id は固定ID。単語を追加・並べ替えしても、既存IDは変更しない。
+// level: 1=共通テスト〜MARCH / 2=MARCH〜早慶 / 3=早慶〜最難関国公立
+const TARGETS = {1:1900, 2:1000, 3:600}; // 合計3,500語の仮配分
+const SEED_BANK = [
+{id:'v0001',word:'achieve',pos:'動詞',meaning:'達成する、成し遂げる',level:1,tags:['頻出'],example:'She achieved her goal after years of effort.',exampleJa:'彼女は何年もの努力の末に目標を達成した。'},
+{id:'v0002',word:'acquire',pos:'動詞',meaning:'手に入れる、習得する',level:1,tags:['頻出'],example:'Children acquire language naturally.',exampleJa:'子どもは自然に言語を習得する。'},
+{id:'v0003',word:'affect',pos:'動詞',meaning:'影響を与える',level:1,tags:['頻出'],example:'The weather can affect our plans.',exampleJa:'天候は私たちの計画に影響を与えることがある。'},
+{id:'v0004',word:'approach',pos:'動詞・名詞',meaning:'近づく、取り組み方',level:1,tags:['頻出'],example:'We need a new approach to the problem.',exampleJa:'その問題には新しい取り組み方が必要だ。'},
+{id:'v0005',word:'avoid',pos:'動詞',meaning:'避ける',level:1,tags:['頻出'],example:'Try to avoid making the same mistake.',exampleJa:'同じ間違いをするのは避けるようにしなさい。'},
+{id:'v0006',word:'benefit',pos:'名詞・動詞',meaning:'利益、恩恵を受ける',level:1,tags:['頻出'],example:'Exercise has many health benefits.',exampleJa:'運動には多くの健康上の利点がある。'},
+{id:'v0007',word:'consider',pos:'動詞',meaning:'よく考える、見なす',level:1,tags:['頻出'],example:'We are considering several options.',exampleJa:'私たちはいくつかの選択肢を検討している。'},
+{id:'v0008',word:'determine',pos:'動詞',meaning:'決定する、突き止める',level:1,tags:['頻出'],example:'The test will determine the result.',exampleJa:'その試験が結果を決める。'},
+{id:'v0009',word:'develop',pos:'動詞',meaning:'発達する、発展させる',level:1,tags:['頻出'],example:'The city developed rapidly.',exampleJa:'その都市は急速に発展した。'},
+{id:'v0010',word:'effect',pos:'名詞',meaning:'影響、効果',level:1,tags:['頻出'],example:'The new rule had little effect.',exampleJa:'その新しい規則はほとんど影響を及ぼさなかった。'},
+{id:'v0011',word:'effort',pos:'名詞',meaning:'努力',level:1,tags:['頻出'],example:'Learning a language takes effort.',exampleJa:'言語を学ぶには努力が必要だ。'},
+{id:'v0012',word:'evidence',pos:'名詞',meaning:'証拠、根拠',level:1,tags:['頻出'],example:'There is no evidence to support the claim.',exampleJa:'その主張を裏付ける証拠はない。'},
+{id:'v0013',word:'acknowledge',pos:'動詞',meaning:'認める、謝意を示す',level:2,tags:['論説'],example:'He acknowledged that he was wrong.',exampleJa:'彼は自分が間違っていたことを認めた。'},
+{id:'v0014',word:'adequate',pos:'形容詞',meaning:'十分な、適切な',level:2,tags:['論説'],example:'We need adequate information before deciding.',exampleJa:'決定する前に十分な情報が必要だ。'},
+{id:'v0015',word:'apparent',pos:'形容詞',meaning:'明らかな、見かけ上の',level:2,tags:['論説'],example:'The difference was apparent to everyone.',exampleJa:'その違いは誰の目にも明らかだった。'},
+{id:'v0016',word:'assume',pos:'動詞',meaning:'当然と思う、仮定する',level:2,tags:['論説'],example:'Do not assume that everyone agrees.',exampleJa:'全員が賛成していると決めつけてはいけない。'},
+{id:'v0017',word:'capacity',pos:'名詞',meaning:'能力、収容能力',level:2,tags:['論説'],example:'Humans have a capacity for learning.',exampleJa:'人間には学習する能力がある。'},
+{id:'v0018',word:'consequence',pos:'名詞',meaning:'結果、重大な影響',level:2,tags:['論説'],example:'Every choice has consequences.',exampleJa:'どんな選択にも結果が伴う。'},
+{id:'v0019',word:'decline',pos:'動詞・名詞',meaning:'減少する、断る、減少',level:2,tags:['論説'],example:'Sales began to decline last year.',exampleJa:'売上は昨年減少し始めた。'},
+{id:'v0020',word:'demonstrate',pos:'動詞',meaning:'実証する、示す',level:2,tags:['論説'],example:'The study demonstrates the importance of sleep.',exampleJa:'その研究は睡眠の重要性を実証している。'},
+{id:'v0021',word:'distinguish',pos:'動詞',meaning:'区別する、見分ける',level:2,tags:['論説'],example:'It is difficult to distinguish fact from opinion.',exampleJa:'事実と意見を区別するのは難しい。'},
+{id:'v0022',word:'establish',pos:'動詞',meaning:'確立する、設立する',level:2,tags:['論説'],example:'The team established a new method.',exampleJa:'そのチームは新しい方法を確立した。'},
+{id:'v0023',word:'maintain',pos:'動詞',meaning:'維持する、主張する',level:2,tags:['論説'],example:'It is important to maintain a balance.',exampleJa:'バランスを維持することが重要だ。'},
+{id:'v0024',word:'significant',pos:'形容詞',meaning:'重要な、かなりの',level:2,tags:['論説'],example:'The policy had a significant impact.',exampleJa:'その政策は大きな影響を与えた。'},
+{id:'v0025',word:'alleviate',pos:'動詞',meaning:'（苦痛・問題などを）軽減する',level:3,tags:['最難関'],example:'The measures may alleviate poverty.',exampleJa:'その対策は貧困を軽減するかもしれない。'},
+{id:'v0026',word:'ambiguous',pos:'形容詞',meaning:'曖昧な、多義的な',level:3,tags:['最難関'],example:'The wording of the rule is ambiguous.',exampleJa:'その規則の文言は曖昧だ。'},
+{id:'v0027',word:'analogous',pos:'形容詞',meaning:'類似した、対応する',level:3,tags:['最難関'],example:'The process is analogous to learning a skill.',exampleJa:'その過程は技能を学ぶことに類似している。'},
+{id:'v0028',word:'arbitrary',pos:'形容詞',meaning:'恣意的な、独断的な',level:3,tags:['最難関'],example:'The decision seemed arbitrary.',exampleJa:'その決定は恣意的に思えた。'},
+{id:'v0029',word:'coherent',pos:'形容詞',meaning:'筋の通った、一貫した',level:3,tags:['最難関'],example:'She presented a coherent argument.',exampleJa:'彼女は筋の通った議論を示した。'},
+{id:'v0030',word:'constrain',pos:'動詞',meaning:'制約する、抑制する',level:3,tags:['最難関'],example:'Limited resources constrain our choices.',exampleJa:'限られた資源が私たちの選択を制約する。'},
+{id:'v0031',word:'discrepancy',pos:'名詞',meaning:'食い違い、不一致',level:3,tags:['最難関'],example:'We found a discrepancy in the data.',exampleJa:'データに不一致が見つかった。'},
+{id:'v0032',word:'empirical',pos:'形容詞',meaning:'経験的な、実証に基づく',level:3,tags:['最難関'],example:'The theory requires empirical evidence.',exampleJa:'その理論には実証的な証拠が必要だ。'},
+{id:'v0033',word:'exacerbate',pos:'動詞',meaning:'（問題・状況などを）悪化させる',level:3,tags:['最難関'],example:'The delay could exacerbate the problem.',exampleJa:'その遅れは問題を悪化させる可能性がある。'},
+{id:'v0034',word:'inherent',pos:'形容詞',meaning:'固有の、本来備わっている',level:3,tags:['最難関'],example:'Risk is inherent in the process.',exampleJa:'その過程にはリスクが本質的に伴う。'},
+{id:'v0035',word:'mitigate',pos:'動詞',meaning:'（悪影響などを）和らげる、軽減する',level:3,tags:['最難関'],example:'The changes may mitigate the damage.',exampleJa:'その変更は被害を軽減するかもしれない。'},
+{id:'v0036',word:'plausible',pos:'形容詞',meaning:'もっともらしい、妥当と思われる',level:3,tags:['最難関'],example:'That is a plausible explanation.',exampleJa:'それはもっともらしい説明だ。'}
+];
+
+const BANK_KEY='wordQuest.extraBank.v1';
+const PROGRESS_KEY='wordQuest.progress.v1';
+const SESSION_KEY='wordQuest.session.v1';
+const LEVEL_NAMES={1:'共通テスト〜MARCH',2:'MARCH〜早慶',3:'早慶〜最難関国公立'};
+function safeRead(key,fallback){try{const x=JSON.parse(localStorage.getItem(key));return x??fallback}catch(e){return fallback}}
+const EXTRA_BANK=safeRead(BANK_KEY,[]);
+let BANK=mergeBank(SEED_BANK,Array.isArray(EXTRA_BANK)?EXTRA_BANK:[]);
+let progress=safeRead(PROGRESS_KEY,{schemaVersion:1,xp:0,answered:0,correct:0,streak:0,statuses:{},missed:[],levelStats:{}});
+if(!progress.statuses)progress.statuses={}; if(!Array.isArray(progress.missed))progress.missed=[];if(!progress.levelStats)progress.levelStats={};
+let categoryLevel=0,direction='en-ja',reviewMode='all',vocabLevel=0,vocabStatus='all';
+let queue=[],index=0,current=null,done=false,active=false,sessionCorrect=0,sessionAnswered=0,sessionSize=10,activeChoices=[];
+let missedIds=new Set(progress.missed||[]);
+function mergeBank(base,extra){const out=[...base],ids=new Set(base.map(x=>x.id));for(const w of extra){if(validateWord(w)&&!ids.has(w.id)){out.push(normalizeWord(w));ids.add(w.id)}}return out}
+function validateWord(w){return !!w&&typeof w.id==='string'&&/^v[\w-]{2,30}$/.test(w.id)&&typeof w.word==='string'&&w.word.trim()&&typeof w.meaning==='string'&&w.meaning.trim()&&[1,2,3].includes(Number(w.level))}
+function normalizeWord(w){return {id:w.id.trim(),word:w.word.trim(),pos:String(w.pos||''),meaning:w.meaning.trim(),level:Number(w.level),tags:Array.isArray(w.tags)?w.tags.map(String):[],example:String(w.example||''),exampleJa:String(w.exampleJa||'')}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+function persistProgress(){progress.missed=[...missedIds];try{localStorage.setItem(PROGRESS_KEY,JSON.stringify(progress))}catch(e){}updateAll()}
+function persistBank(){try{localStorage.setItem(BANK_KEY,JSON.stringify(BANK.filter(w=>!SEED_BANK.some(s=>s.id===w.id))))}catch(e){toast('保存容量が不足しています。単語データを書き出して保管してください。')}}
+function statusOf(id){return progress.statuses[id]||'learning'}
+function markStatus(id,status){if(!BANK.some(w=>w.id===id))return;if(!['known','uncertain','learning'].includes(status))return;progress.statuses[id]=status;if(status==='known')missedIds.delete(id);persistProgress();renderWordList();if(current&&current.id===id)renderStatusButtons();toast(status==='known'?'「覚えた」に登録しました。':status==='uncertain'?'「曖昧」に登録しました。':'「まだ」に登録しました。')}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>el.classList.remove('show'),2300)}
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function levelOf(w){return Number(w.level)||1}
+function getPool(){return BANK.filter(w=>(categoryLevel===0||levelOf(w)===categoryLevel)&&(reviewMode==='all'||(reviewMode==='missed'?missedIds.has(w.id):reviewMode==='uncertain'?statusOf(w.id)==='uncertain':statusOf(w.id)==='learning')))}
+function updatePoolCount(){document.getElementById('poolCount').textContent=`出題候補 ${getPool().length.toLocaleString('ja-JP')}語`;document.getElementById('accuracy').textContent=`正答率 ${progress.answered?Math.round(progress.correct/progress.answered*100)+'%':'—'}`}
+function updateAll(){const known=BANK.filter(w=>statusOf(w.id)==='known').length;document.getElementById('xp').textContent=(progress.xp||0).toLocaleString('ja-JP');document.getElementById('knownCount').textContent=known.toLocaleString('ja-JP');document.getElementById('loadedCount').textContent=`${BANK.length.toLocaleString('ja-JP')} / 3,500`;document.getElementById('answeredTotal').textContent=(progress.answered||0).toLocaleString('ja-JP');document.getElementById('correctTotal').textContent=(progress.correct||0).toLocaleString('ja-JP');document.getElementById('uncertainCount').textContent=BANK.filter(w=>statusOf(w.id)==='uncertain').length.toLocaleString('ja-JP');document.getElementById('reviewSummary').textContent=`ミス ${missedIds.size.toLocaleString('ja-JP')}語 ／ 曖昧 ${BANK.filter(w=>statusOf(w.id)==='uncertain').length.toLocaleString('ja-JP')}語 ／ まだ ${BANK.filter(w=>statusOf(w.id)==='learning').length.toLocaleString('ja-JP')}語`;renderLevelProgress();updatePoolCount();showResume()}
+function renderLevelProgress(){const el=document.getElementById('levelProgress');el.innerHTML=[1,2,3].map(l=>{const loaded=BANK.filter(w=>levelOf(w)===l).length;const known=BANK.filter(w=>levelOf(w)===l&&statusOf(w.id)==='known').length;const pct=TARGETS[l]?Math.min(100,loaded/TARGETS[l]*100):0;const mastered=loaded?Math.round(known/loaded*100):0;return `<div class="level-card"><strong>Lv.${l} ${esc(LEVEL_NAMES[l])}</strong><div class="muted">収録 ${loaded.toLocaleString('ja-JP')} / 目標 ${TARGETS[l].toLocaleString('ja-JP')}語</div><div class="level-track"><div class="level-fill" style="width:${pct.toFixed(2)}%"></div></div><div class="muted" style="margin-top:6px">収録率 ${pct.toFixed(1)}% ／ 習得 ${known}語（収録語の${mastered}%）</div></div>`}).join('')}
+function setActiveChip(containerSelector,attr,value){document.querySelectorAll(`${containerSelector} .chip`).forEach(b=>b.classList.toggle('active',b.getAttribute(attr)===String(value)))}
+function selectLevel(l){categoryLevel=Number(l);setActiveChip('#levels','data-level',categoryLevel);updatePoolCount()}
+function selectDirection(d){direction=d;setActiveChip('#directions','data-direction',d);if(active)toast('出題方向は次のクエストから反映されます。')}
+function selectReview(m){reviewMode=m;setActiveChip('#reviewModes','data-review',m);updatePoolCount()}
+function startQuiz(n=10){const pool=getPool();if(!pool.length){toast('この条件で出題できる単語がありません。');return}queue=shuffle(pool).slice(0,Math.min(n,pool.length));index=0;sessionCorrect=0;sessionAnswered=0;sessionSize=n;done=false;active=true;document.getElementById('quiz').hidden=false;document.getElementById('result').hidden=true;document.getElementById('skip').disabled=false;document.getElementById('pause').disabled=false;document.getElementById('roundLabel').textContent=`${queue.length}語クエスト`;renderQuestion();saveSession()}
+function renderQuestion(){current=queue[index];done=false;document.getElementById('statusPanel').hidden=true;document.getElementById('speak').hidden=direction!=='en-ja';document.getElementById('next').disabled=true;document.getElementById('skip').disabled=false;document.getElementById('fill').style.width=`${index/queue.length*100}%`;const prompt=document.querySelector('#quiz .prompt');prompt.innerHTML=direction==='en-ja'?`<div class="word-main">${esc(current.word)}</div><div class="word-pos">${esc(current.pos||'英単語')} · Lv.${levelOf(current)}</div>`:`<div class="word-meaning">${esc(current.meaning)}</div><div class="word-pos">${esc(current.pos||'品詞未登録')} · Lv.${levelOf(current)}</div>`;document.getElementById('feedback').className='feedback';document.getElementById('feedback').innerHTML='';const candidates=shuffle(BANK.filter(w=>w.id!==current.id&&levelOf(w)===levelOf(current)));let distractors=candidates.slice(0,3);if(distractors.length<3){const others=shuffle(BANK.filter(w=>w.id!==current.id&&!distractors.some(d=>d.id===w.id))).slice(0,3-distractors.length);distractors=distractors.concat(others)}activeChoices=shuffle([current,...distractors]);const choices=document.getElementById('choices');choices.innerHTML='';activeChoices.forEach(w=>{const b=document.createElement('button');b.type='button';b.className='choice';b.dataset.id=w.id;b.textContent=direction==='en-ja'?w.meaning:w.word;b.addEventListener('click',()=>answer(w.id));choices.appendChild(b)});document.getElementById('roundLabel').textContent=`${index+1} / ${queue.length} 語`;saveSession()}
+function answer(id){if(done)return;done=true;sessionAnswered++;progress.answered=(progress.answered||0)+1;const ok=id===current.id;const stat=progress.levelStats[levelOf(current)]||(progress.levelStats[levelOf(current)]={answered:0,correct:0});stat.answered++;if(ok){sessionCorrect++;progress.correct=(progress.correct||0)+1;progress.xp=(progress.xp||0)+10;progress.streak=(progress.streak||0)+1;missedIds.delete(current.id)}else{progress.streak=0;missedIds.add(current.id)}document.querySelectorAll('#choices .choice').forEach(b=>{b.disabled=true;if(b.dataset.id===current.id)b.classList.add('correct');else if(b.dataset.id===id)b.classList.add('wrong')});const f=document.getElementById('feedback');f.className='feedback show '+(ok?'good':'bad');f.innerHTML=`<strong>${ok?'正解！ +10 XP':`不正解。正解：${esc(current.word)}（${esc(current.meaning)}）`}</strong><span>${esc(current.pos||'英単語')} · ${esc(LEVEL_NAMES[levelOf(current)])}</span>${current.example?`<div class="example"><b>${esc(current.example)}</b>${current.exampleJa?`<br>${esc(current.exampleJa)}`:''}</div>`:''}`;document.getElementById('next').disabled=false;document.getElementById('skip').disabled=true;document.getElementById('statusPanel').hidden=false;renderStatusButtons();persistProgress();document.getElementById('fill').style.width=`${(index+1)/queue.length*100}%`;saveSession()}
+function skipQuestion(){if(done||!current)return;answerAsSkip()}
+function answerAsSkip(){if(done)return;done=true;sessionAnswered++;progress.answered=(progress.answered||0)+1;progress.streak=0;missedIds.add(current.id);const stat=progress.levelStats[levelOf(current)]||(progress.levelStats[levelOf(current)]={answered:0,correct:0});stat.answered++;document.querySelectorAll('#choices .choice').forEach(b=>{b.disabled=true;if(b.dataset.id===current.id)b.classList.add('correct')});const f=document.getElementById('feedback');f.className='feedback show bad';f.innerHTML=`<strong>パス：${esc(current.word)} — ${esc(current.meaning)}</strong><span>${esc(current.pos||'英単語')} · ${esc(LEVEL_NAMES[levelOf(current)])}</span>${current.example?`<div class="example"><b>${esc(current.example)}</b>${current.exampleJa?`<br>${esc(current.exampleJa)}`:''}</div>`:''}`;document.getElementById('next').disabled=false;document.getElementById('skip').disabled=true;document.getElementById('statusPanel').hidden=false;renderStatusButtons();persistProgress();saveSession()}
+function renderStatusButtons(){document.querySelectorAll('[data-status]').forEach(b=>b.classList.toggle('active',b.dataset.status===statusOf(current?.id)))}
+function nextQuestion(){if(!done){toast('選択肢を選ぶか、パスしてください。');return}index++;if(index>=queue.length){active=false;document.getElementById('quiz').hidden=true;document.getElementById('result').hidden=false;document.getElementById('fill').style.width='100%';const pct=sessionAnswered?Math.round(sessionCorrect/sessionAnswered*100):0;document.getElementById('score').textContent=`${pct}%`;document.getElementById('resultText').textContent=`${queue.length}語中 ${sessionCorrect}語正解。獲得XP：${sessionCorrect*10}。ミス復習・曖昧復習で定着させよう。`;clearSession();updateAll();return}renderQuestion()}
+function retryQuiz(){startQuiz(sessionSize)}
+function speakWord(word){if(!word)return;if(!('speechSynthesis'in window)){toast('この端末では音声に対応していません。');return}window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(word);utterance.lang='en-US';utterance.rate=.88;window.speechSynthesis.speak(utterance)}
+function speakCurrent(){if(current)speakWord(current.word)}
+function renderWordList(){const q=document.getElementById('wordSearch').value.trim().toLowerCase();let items=BANK.filter(w=>(vocabLevel===0||levelOf(w)===vocabLevel)&&(vocabStatus==='all'||statusOf(w.id)===vocabStatus)&&(!q||[w.word,w.meaning,w.pos,(w.tags||[]).join(' ')].join(' ').toLowerCase().includes(q)));items.sort((a,b)=>levelOf(a)-levelOf(b)||a.word.localeCompare(b.word));document.getElementById('wordListCount').textContent=`${items.length.toLocaleString('ja-JP')}語表示`;const el=document.getElementById('wordList');if(!items.length){el.innerHTML='<div class="empty">一致する単語がありません。<br>検索語やフィルターを変えてみてください。</div>';return}el.innerHTML=items.slice(0,500).map(w=>{const st=statusOf(w.id);const statusText=st==='known'?'覚えた':st==='uncertain'?'曖昧':'まだ';const statusClass=st==='known'?'status-known':st==='uncertain'?'status-uncertain':'status-learning';return `<details class="word-item"><summary><div class="word-head"><div><strong>${esc(w.word)}</strong><div class="meaning">${esc(w.meaning)}</div></div><div><span class="tag">Lv.${levelOf(w)}</span><span class="pill ${statusClass}">${statusText}</span></div></div></summary><div class="word-detail"><div><b>品詞：</b>${esc(w.pos||'未登録')}　<b>レベル：</b>${esc(LEVEL_NAMES[levelOf(w)])}</div>${w.example?`<p><b>例文：</b>${esc(w.example)}<br>${esc(w.exampleJa||'')}</p>`:''}${w.tags?.length?`<p><b>タグ：</b>${w.tags.map(esc).join('・')}</p>`:''}<div class="status-actions"><button class="status-btn ${st==='known'?'active':''}" data-list-status="known" data-id="${esc(w.id)}">✓ 覚えた</button><button class="status-btn ${st==='uncertain'?'active':''}" data-list-status="uncertain" data-id="${esc(w.id)}">△ 曖昧</button><button class="status-btn ${st==='learning'?'active':''}" data-list-status="learning" data-id="${esc(w.id)}">↻ まだ</button><button class="status-btn" data-speak-id="${esc(w.id)}">🔊 発音</button></div></div></details>`}).join('')+(items.length>500?'<div class="muted">表示は先頭500語までです。検索して絞り込んでください。</div>':'')}
+function selectVocabLevel(l){vocabLevel=Number(l);setActiveChip('#vocabLevels','data-vlevel',vocabLevel);renderWordList()}
+function selectVocabStatus(s){vocabStatus=s;setActiveChip('#vocabStatuses','data-vstatus',s);renderWordList()}
+function downloadJSON(filename,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportBank(){downloadJSON('word-quest-bank.json',{schemaVersion:1,words:BANK})}
+function downloadTemplate(){downloadJSON('word-quest-word-template.json',{schemaVersion:1,words:[{id:'v9001',word:'sample',pos:'動詞',meaning:'意味を入力',level:1,tags:['例'],example:'Write an original example sentence.',exampleJa:'例文の日本語訳を入力。'}]});toast('テンプレートを保存しました。例の単語を置き換えて使ってください。')}
+async function importBankFile(file){if(!file)return;try{const parsed=JSON.parse(await file.text());const input=Array.isArray(parsed)?parsed:parsed.words;if(!Array.isArray(input))throw new Error('words配列がありません');const existing=new Set(BANK.map(w=>w.id));const add=[];let invalid=0,duplicate=0;for(const raw of input){if(!validateWord(raw)){invalid++;continue}if(existing.has(raw.id)){duplicate++;continue}const word=normalizeWord(raw);add.push(word);existing.add(word.id)}if(!add.length){toast(`追加0語（重複${duplicate}・形式不正${invalid}）`);return}BANK=BANK.concat(add);persistBank();renderWordList();updateAll();toast(`${add.length}語を追加しました（重複${duplicate}・形式不正${invalid}）`)}catch(e){toast('読み込めませんでした。JSON形式を確認してください。')}finally{document.getElementById('bankFile').value=''}}
+function exportProgress(){downloadJSON('word-quest-progress.json',{schemaVersion:1,progress:{...progress,missed:[...missedIds]}})}
+async function importProgressFile(file){if(!file)return;try{const x=JSON.parse(await file.text());const p=x.progress||x;if(!p||typeof p.xp!=='number'||!p.statuses)throw new Error('format');progress={schemaVersion:1,xp:Number(p.xp)||0,answered:Number(p.answered)||0,correct:Number(p.correct)||0,streak:Number(p.streak)||0,statuses:p.statuses||{},missed:Array.isArray(p.missed)?p.missed:[],levelStats:p.levelStats||{}};missedIds=new Set(progress.missed);persistProgress();renderWordList();toast('学習記録を復元しました。')}catch(e){toast('復元できませんでした。バックアップ形式を確認してください。')}finally{document.getElementById('progressFile').value=''}}
+function resetProgress(){if(!confirm('XP・習得状態・ミス記録をリセットしますか？単語データ自体は消えません。'))return;progress={schemaVersion:1,xp:0,answered:0,correct:0,streak:0,statuses:{},missed:[],levelStats:{}};missedIds=new Set();persistProgress();renderWordList();toast('学習記録をリセットしました。')}
+function saveSession(){if(!active||!queue.length)return;try{localStorage.setItem(SESSION_KEY,JSON.stringify({ids:queue.map(w=>w.id),index:done?index+1:index,sessionCorrect,sessionAnswered,sessionSize,categoryLevel,direction,reviewMode,time:Date.now()}))}catch(e){}showResume()}
+function getSession(){const s=safeRead(SESSION_KEY,null);return s&&Array.isArray(s.ids)&&s.index<s.ids.length?s:null}
+function clearSession(){try{localStorage.removeItem(SESSION_KEY)}catch(e){}showResume()}
+function showResume(){const s=getSession();const card=document.getElementById('resumeCard');if(!card)return;if(!s||active){card.hidden=true;return}card.hidden=false;document.getElementById('resumeText').textContent=`${s.ids.length}語中 ${s.index}語まで終了（正解 ${s.sessionCorrect}語）｜${s.direction==='ja-en'?'日本語→英語':'英語→日本語'}｜保存 ${new Date(s.time).toLocaleString('ja-JP')}`}
+function resumeSession(){const s=getSession();if(!s)return;const restored=s.ids.map(id=>BANK.find(w=>w.id===id));if(restored.some(w=>!w)){clearSession();toast('保存された単語の一部が見つからないため再開できません。');return}queue=restored;index=s.index;sessionCorrect=s.sessionCorrect||0;sessionAnswered=s.sessionAnswered||0;sessionSize=s.sessionSize||10;categoryLevel=s.categoryLevel||0;direction=s.direction||'en-ja';reviewMode=s.reviewMode||'all';selectLevel(categoryLevel);selectDirection(direction);selectReview(reviewMode);active=true;document.getElementById('quiz').hidden=false;document.getElementById('result').hidden=true;document.getElementById('skip').disabled=false;document.getElementById('pause').disabled=false;renderQuestion();toast('クエストを再開しました。')}
+function pauseSession(){if(!active)return;saveSession();active=false;document.getElementById('quiz').hidden=true;showResume();toast('途中経過を保存しました。')}
+function discardSession(){if(confirm('中断中のクエストを破棄しますか？')){clearSession();toast('中断データを削除しました。')}}
+function beginReview(type){selectReview(type);document.querySelector('[data-tab="play"]').click();startQuiz(999)}
+
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));if(b.dataset.tab==='vocab')renderWordList();if(b.dataset.tab==='progress')updateAll()}));
+document.querySelectorAll('#levels .chip').forEach(b=>b.addEventListener('click',()=>selectLevel(b.dataset.level)));
+document.querySelectorAll('#directions .chip').forEach(b=>b.addEventListener('click',()=>selectDirection(b.dataset.direction)));
+document.querySelectorAll('#reviewModes .chip').forEach(b=>b.addEventListener('click',()=>selectReview(b.dataset.review)));
+document.querySelectorAll('#vocabLevels .chip').forEach(b=>b.addEventListener('click',()=>selectVocabLevel(b.dataset.vlevel)));
+document.querySelectorAll('#vocabStatuses .chip').forEach(b=>b.addEventListener('click',()=>selectVocabStatus(b.dataset.vstatus)));
+document.getElementById('wordSearch').addEventListener('input',renderWordList);
+document.getElementById('bankFile').addEventListener('change',e=>importBankFile(e.target.files?.[0]));
+document.getElementById('progressFile').addEventListener('change',e=>importProgressFile(e.target.files?.[0]));
+document.addEventListener('click',e=>{const b=e.target.closest('[data-action],[data-status],[data-list-status],[data-speak-id]');if(!b)return;if(b.dataset.status){if(current&&done)markStatus(current.id,b.dataset.status);return}if(b.dataset.listStatus){markStatus(b.dataset.id,b.dataset.listStatus);return}if(b.dataset.speakId){const w=BANK.find(x=>x.id===b.dataset.speakId);if(w)speakWord(w.word);return}switch(b.dataset.action){case 'start5':startQuiz(5);break;case 'start10':startQuiz(10);break;case 'start20':startQuiz(20);break;case 'startall':startQuiz(999999);break;case 'skip':skipQuestion();break;case 'next':nextQuestion();break;case 'retry':retryQuiz();break;case 'speak':speakCurrent();break;case 'pause':pauseSession();break;case 'resume':resumeSession();break;case 'discard':discardSession();break;case 'reviewMissed':beginReview('missed');break;case 'reviewUncertain':beginReview('uncertain');break;case 'importBank':document.getElementById('bankFile').click();break;case 'exportBank':exportBank();break;case 'downloadTemplate':downloadTemplate();break;case 'exportProgress':exportProgress();break;case 'importProgress':document.getElementById('progressFile').click();break;case 'reset':resetProgress();break}});
+document.addEventListener('keydown',e=>{if(!active||e.metaKey||e.ctrlKey||e.altKey||!document.getElementById('play').classList.contains('active'))return;const n=Number(e.key);if(n>=1&&n<=4&&!done){const b=document.querySelectorAll('#choices .choice')[n-1];if(b)b.click()}else if((e.key==='Enter'||e.key==='ArrowRight')&&done){nextQuestion()}else if(e.key.toLowerCase()==='p'){pauseSession()}});
+// 起動時に途中経過・保存データを復元して画面を構築
+renderWordList();updateAll();showResume();
+</script>
+</body>
+</html>
